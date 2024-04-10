@@ -1,36 +1,111 @@
 /* -----------------
 Tabla de contenidos:
 --------------------
-1. Fuente ......................... 11
-2. Variables ...................... 15
-3. Estilos base ................... 29
+1. Fuente ......................... 13
+2. Variables ...................... 17
+3. Estilos base ................... 40
 4. Estilos reutilizables .......... 
-5. Mobile workflow ................  
+5. Mobile workflow ................ 
 -------------------- 
 */
 
 /* ----- Fuente ----- */
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
-
 /* ----- Variables ----- */
 :root {
-    /* colores */
-    --color: #333;
+  /* colores */
+  --body-bg: #212020;
+  --card-bg: #242323;
+  --card-footer-bg: #1f1e1e;
+  --address-bg: #1e1d1d;
+  --address-text: #8a8a8a;
+  --text: #c2c2c2; /* username & body text */
 
-    /* config. */
-    --fuente: 'Montserrat', sans-serif;
-    --ft-size: 1rem;
-    --l-height: 22px;
+  --twitter-bg: #76a9ea;
+  --linkedin-bg: #0984c6;
+  --facebook-bg: #456da4;
+
+  /* configuraciones */
+  --fuente: "Montserrat", sans-serif;
+  --ft-size: 14px;
+  --l-height: 22px;
 }
-
 
 /* ----------------------------- */
 /* ----- Estilos generales ----- */
 /* ----------------------------- */
 body {
-    font-family: var(--fuente);
-    background: linear-gradient(to right, #43389f, #4ec6ca);
-	color: #fff;
+  color: var(--text);
+  font-size: var(--ft-size);
+  font-family: var(--fuente);
+  background-color: var(--body-bg);
 }
 
+h2 {
+  font-size: 18px;
+}
+
+img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+i {
+  font-size: 25px;
+  cursor: pointer;
+  transition: transform 0.7s linear;
+}
+
+/* ----- Estilos reutilizables ----- */
+.dflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----- Estilos container ----- */
+.container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ----- Estilos card ----- */
+.card {
+  width: 330px;
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  box-shadow: 0px 13px 17px 0px rgba(28, 27, 27, 0.27);
+}
+
+.card__main {
+  height: 100%;
+  text-align: center;
+  padding: 40px;
+}
+
+.card__footer {
+  padding: 30px 40px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  justify-content: space-around;
+  background-color: var(--card-footer-bg);
+}
+
+/* ----- Estilos iconos ----- */
+.card__footer i:first-child {
+  color: var(--twitter-bg);
+}
+
+.card__footer i:nth-child(2) {
+  color: var(--linkedin-bg);
+}
+
+.card__footer i:last-child {
+  color: var(--facebook-bg);
+}
+
+/* ----- Estado hover iconos ----- */
+.card__footer i:hover {
+  transform: scale(1.3);
+}
